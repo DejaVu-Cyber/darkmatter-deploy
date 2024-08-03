@@ -1,0 +1,37 @@
+# pywb config file
+# ========================================
+#
+debug: false
+
+# Uncomment to set banner colors and logo
+# ui:
+  # logo: path/relative/from/static/logo.png
+  # logo_home_url: https://example.com
+  # navbar_background_hex: 0c49b0
+  # navbar_color_hex: fff
+  # navbar_light_buttons: true
+  # disable_printing: true
+
+# collections:
+#     pywb:
+
+# Settings for each collection
+use_js_obj_proxy: true
+
+# Eanable Memento support
+enable_memento: true
+
+# Replay content in an iframe
+framed_replay: false
+
+redirect_to_exact: false
+
+autoindex: 30
+
+# Uncomment and change to set default locale
+# default_locale: en
+
+# Uncomment to set available locales
+# locales:
+#   - en
+#   - ru

@@ -1,0 +1,25 @@
+# This example demonstrates running pywb with nginx frontend under a subpath /wayback
+
+version: '3'
+
+services:
+  # main pywb image
+  pywb:
+    image: webrecorder/pywb
+    volumes:
+        - ./config/config.yaml:/webarchive/config.yaml
+        - ./webarchive/:/webarchive/
+        - ./config/uwsgi.ini:/uwsgi/uwsgi.ini
+    environment:
+      INIT_COLLECTION: ""
+
+  nginx:
+    image: nginx
+    ports:
+        - 8080:80
+
+    volumes:
+        - ./config/pywb-nginx.conf:/etc/nginx/conf.d/default.conf
+
+    depends_on:
+        - pywb
